@@ -63,3 +63,29 @@ the Layers key of output will be like this :
 ]
 ```
 we can see difference between load and import commands is in layers key of output, in fact import command merges all the layers.
+
+## Task 3:
+We Run a nginx container and bind it to port 8081 of the host.
+```bash
+docker run -d --name nginx -p 8081:80 nginx
+```
+ ## Task 4:
+ Find the number of running processes of the container run in the previous section:
+ 
+ ```bash
+  docker top nginx
+ ```
+
+ ## Task 5:
+ what is the use of docker-proxy ?
+ The docker-proxy operates in userland, and simply receives any packets arriving at the host's specified port, 
+ that the kernel hasn't 'dropped' or forwarded, and redirects them to the container's port.
+ 
+ ## Task 6:
+ Dangling images are layers that have no relationship to any tagged images and have <none> as their tag. 
+ We can remove Dangling images by this command:
+ ```bash
+ docker image prune
+ ```
+
+
