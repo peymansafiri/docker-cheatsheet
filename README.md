@@ -3,7 +3,6 @@
 
 ## Task 1:
 We pull image of mysql:8 and then specify docker version , ports and volumes by which the image is built.
-## Answer:
 ``` bash
 
  docker pull mysql:8
@@ -126,10 +125,16 @@ The docker pause command suspends all processes in the specified containers. On 
  ```
  
   ## Task 12:
+ We run a alpine container and set 2 enviroment variables named NAME and CLASS :
+ ```bash
+ docker run -itd --name my_alpine -e NAME=peyman -e CLASS=dws alpine
 
- 
- 
-
+ ```
+   ## Task 12:
+  We Run a alpine container , bind a folder on host to /data path of container and set /data path of container as working dir:
+```bash
+ docker run -itd --name alpine -v /home/test:/data --workdir /data alpine 
+```
 
 [@dwsclass](https://github.com/dwsclass)dws-ops-005-docker
  
