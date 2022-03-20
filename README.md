@@ -87,7 +87,40 @@ docker run -d --name nginx -p 8081:80 nginx
  ```bash
  docker image prune
  ```
+ ## Task 7:
+ The docker kill subcommand kills one or more containers. The main process inside the container is sent SIGKILL signal (default), or the signal that is specified with the --signal option
+ ```bash
+  docker kill [OPTIONS] CONTAINER [CONTAINER...]
+```
+  ## Task 8:
+ We want to run a alpine container and install nginx on it , then use commit commmand to create a new image of it.
+```bash
+ docker run -itd -p 8081:80 --name alpine alpine
+
+ docker exec -it alpine sh
+ 
+```
+in alpine container:
+ ```bash
+ apk install nginx
+ ```
+ and finally in the host:
+ ```bash
+ docker commit alpine alpine:nginx
+ ```
+ ## Task 9:
+
+The docker pause command suspends all processes in the specified containers. On Linux, this uses the freezer cgroup. Traditionally, when suspending a process the SIGSTOP signal is used.
+ 
+ ## Task 10:
+ We Run a redis container and then copy container`id into a file named myredis.cid:
+ ```bash
+ docker inspect redis | jq .[0].Id
+
+ ```
+ 
 
 
 [@dwsclass](https://github.com/dwsclass)dws-ops-005-docker
+ 
 [@dwsclass](https://github.com/dwsclass)dws-ops-006-docker
