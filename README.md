@@ -113,11 +113,21 @@ in alpine container:
 The docker pause command suspends all processes in the specified containers. On Linux, this uses the freezer cgroup. Traditionally, when suspending a process the SIGSTOP signal is used.
  
  ## Task 10:
- We Run a redis container and then copy container`id into a file named myredis.cid:
+ We Run a redis container and then copy container'id into a file named myredis.cid:
  ```bash
- docker inspect redis | jq .[0].Id
+ docker run -itd --name redis redis 
+ docker inspect redis | jq .[0].Id > myredis.cid
+ ```
+ ## Task 11:
+ We Run a nginx container with this specification : CPU=1.5 core , Memory=512M , swap=256M , --cpuset-cpus=0,2
+ ```bash
+ docker run -itd --name nginx --memory=512m --cpus=1.5 --memory-swap=768m  --cpuset-cpus=0,2 nginx:latest
 
  ```
+ 
+  ## Task 12:
+
+ 
  
 
 
